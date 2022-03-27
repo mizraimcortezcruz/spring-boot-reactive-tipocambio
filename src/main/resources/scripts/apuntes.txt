@@ -1,0 +1,2 @@
+C:\Users\MIZRAIM>netstat -ao | find "6002"
+C:\Users\MIZRAIM>Taskkill /PID  10740 /F

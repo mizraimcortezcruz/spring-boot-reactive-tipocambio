@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "3b56a67e-c7f8-405f-8960-62d9eb539f0a",
+		"name": "BCP",
+		"description": "BCP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TipoCambio",
+			"item": [
+				{
+					"name": "getTipoCambioValue",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6004/tipocambio/getexchangevalue/40/from/SOLES/to/DOLARES",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6004",
+							"path": [
+								"tipocambio",
+								"getexchangevalue",
+								"40",
+								"from",
+								"SOLES",
+								"to",
+								"DOLARES"
+							]
+						},
+						"description": "getTipoCambioValue"
+					},
+					"response": []
+				},
+				{
+					"name": "guardarTipoCambio",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"montoOrigen\": 1,\r\n    \"monedaOrigen\": \"SOLES\",\r\n    \"montoDestino\": 0.24,\r\n    \"monedaDestino\": \"EUROS\",\r\n    \"usuarioCreacion\": \"POSTMAN12\",\r\n    \"usuarioModificacion\": \"POSTMAN12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6004/tipocambio/guardar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6004",
+							"path": [
+								"tipocambio",
+								"guardar"
+							]
+						},
+						"description": "guardarTipoCambio"
+					},
+					"response": []
+				},
+				{
+					"name": "editarTipoCambio",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":8,\r\n    \"montoOrigen\": 1,\r\n    \"monedaOrigen\": \"SOLES\",\r\n    \"montoDestino\": 0.24,\r\n    \"monedaDestino\": \"EUROS\",\r\n    \"usuarioCreacion\": \"POSTMANmizraim\",\r\n    \"usuarioModificacion\": \"POSTMANmizraim\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6004/tipocambio/actualizar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6004",
+							"path": [
+								"tipocambio",
+								"actualizar"
+							]
+						},
+						"description": "editarTipoCambio"
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6004/tipocambio/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6004",
+							"path": [
+								"tipocambio",
+								"getAll"
+							]
+						},
+						"description": "getAll"
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6004/tipocambio/888",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6004",
+							"path": [
+								"tipocambio",
+								"888"
+							]
+						},
+						"description": "getById"
+					},
+					"response": []
+				}
+			],
+			"description": "TipoCambio"
+		}
+	]
+}

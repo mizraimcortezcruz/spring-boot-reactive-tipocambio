@@ -16,11 +16,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table("tipocambio")
-public class TipoCambio implements Persistable<Integer> {
+public class TipoCambio implements Persistable<Long> {
 
 	@Id
 	@Column("id")
-	private Integer id;
+	private Long id;
 	@Column("montoOrigen")
 	private Double montoOrigen;
 	@Column("monedaOrigen")
@@ -99,7 +99,7 @@ public class TipoCambio implements Persistable<Integer> {
 	}
 
 	@Override
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
