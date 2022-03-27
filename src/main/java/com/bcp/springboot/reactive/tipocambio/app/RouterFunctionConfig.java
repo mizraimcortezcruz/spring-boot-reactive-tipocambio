@@ -13,6 +13,7 @@ public class RouterFunctionConfig {
 	@Bean
 	public RouterFunction<ServerResponse> routes(TipoCambioHandler handler){
 		return route(GET("/tipocambio/getAll").or(GET("/tipocambio/v1/getAll")), handler::listar)
-				.andRoute(GET("/tipocambio/{id}"), handler::ver);
+				.andRoute(GET("/tipocambio/{id}"), handler::ver)
+				.andRoute(GET("/tipocambio/getexchangevalue/{montoDestino}/from/{monedaOrigen}/to/{monedaDestino}"), handler::retrieveExchangeValue);
 	}
 }

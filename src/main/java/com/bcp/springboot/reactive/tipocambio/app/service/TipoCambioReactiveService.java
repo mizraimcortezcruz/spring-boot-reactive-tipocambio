@@ -10,4 +10,6 @@ public interface TipoCambioReactiveService {
 	Mono<TipoCambio> customUpdate(TipoCambio tipoCambio);
 	Mono<TipoCambio> customGetById(Long id);
 	Flux<TipoCambio> findAll();
+	Mono<TipoCambio> customGetByMonedaOrigenMonedaDestino(String monedaOrigen,String monedaDestino);
+	Mono<TipoCambio> retrieveExchangeValue(Double montoOrigen,String monedaOrigen,String monedaDestino);
 }

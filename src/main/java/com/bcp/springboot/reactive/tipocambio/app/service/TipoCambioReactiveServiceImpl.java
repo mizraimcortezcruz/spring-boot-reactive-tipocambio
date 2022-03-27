@@ -38,5 +38,21 @@ public class TipoCambioReactiveServiceImpl implements TipoCambioReactiveService{
 		logger.info("TipoCambioReactiveServiceImpl findAll");
 		return tipoCambioReactiveRepository.findAll();
 	}
+	@Override
+	public Mono<TipoCambio> customGetByMonedaOrigenMonedaDestino(String monedaOrigen, String monedaDestino) {
+		logger.info("TipoCambioReactiveServiceImpl customGetByMonedaOrigenMonedaDestino");
+		return tipoCambioReactiveRepository.customFindByMonedaOrigenMonedaDestino(monedaOrigen, monedaDestino);
+	}
+	@Override
+	public Mono<TipoCambio> retrieveExchangeValue(Double montoOrigen, String monedaOrigen, String monedaDestino) {
+		logger.info("TipoCambioReactiveServiceImpl retrieveExchangeValue");
+		Mono<TipoCambio> tm=this.customGetByMonedaOrigenMonedaDestino(monedaOrigen, monedaDestino)
+		.map(tmdb->{
+			Double montoTipoCambio=montoOrigen*tmdb.getMontoDestino();
+			tmdb.setMontoDestino(montoTipoCambio);
+			return tmdb;
+		});
+		return tm;
+	}
 	
 }

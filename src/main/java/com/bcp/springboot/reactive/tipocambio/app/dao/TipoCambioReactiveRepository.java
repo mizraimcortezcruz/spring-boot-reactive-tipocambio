@@ -16,4 +16,10 @@ public interface TipoCambioReactiveRepository extends ReactiveCrudRepository<Tip
             " id = :id " +
             " ")
     Mono<TipoCambio> customFindById(Long id);
+	
+	@Query(value = "SELECT * FROM tipocambio  " +
+            "WHERE " +
+            " monedaOrigen = :monedaOrigen " +
+            " and monedaDestino = :monedaDestino ")
+    Mono<TipoCambio> customFindByMonedaOrigenMonedaDestino(String monedaOrigen,String monedaDestino);
 }
