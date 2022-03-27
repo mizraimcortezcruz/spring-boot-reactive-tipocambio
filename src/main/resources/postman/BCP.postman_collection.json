@@ -42,7 +42,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"montoOrigen\": 1,\r\n    \"monedaOrigen\": \"SOLES\",\r\n    \"montoDestino\": 0.24,\r\n    \"monedaDestino\": \"EUROS\",\r\n    \"usuarioCreacion\": \"POSTMAN12\",\r\n    \"usuarioModificacion\": \"POSTMAN12\"\r\n}",
+							"raw": "{\r\n    \"montoOrigen\": 1,\r\n    \"monedaOrigen\": \"SOLES\",\r\n    \"montoDestino\": 0.24,\r\n    \"monedaDestino\": \"EUROS\",\r\n    \"usuarioCreacion\": \"POSTMAN\",\r\n    \"usuarioModificacion\": \"POSTMAN\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -122,7 +122,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:6004/tipocambio/888",
+							"raw": "http://localhost:6004/tipocambio/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -130,7 +130,7 @@
 							"port": "6004",
 							"path": [
 								"tipocambio",
-								"888"
+								"1"
 							]
 						},
 						"description": "getById"

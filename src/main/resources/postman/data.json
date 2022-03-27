@@ -1,0 +1,33 @@
+[{
+    "montoOrigen": 1,
+    "monedaOrigen": "DOLARES",
+    "montoDestino": 0.91,
+    "monedaDestino": "EUROS",
+    "usuarioCreacion": "POSTMAN",
+    "usuarioModificacion": "POSTMAN"
+},
+{
+    "montoOrigen": 1,
+    "monedaOrigen": "EUROS",
+    "montoDestino": 1.10,
+    "monedaDestino": "DOLARES",
+    "usuarioCreacion": "POSTMAN",
+    "usuarioModificacion": "POSTMAN"
+},
+{
+    "montoOrigen": 1,
+    "monedaOrigen": "SOLES",
+    "montoDestino": 0.27,
+    "monedaDestino": "DOLARES",
+    "usuarioCreacion": "POSTMAN",
+    "usuarioModificacion": "POSTMAN"
+},
+{
+    "montoOrigen": 1,
+    "monedaOrigen": "SOLES",
+    "montoDestino": 0.24,
+    "monedaDestino": "EUROS",
+    "usuarioCreacion": "POSTMAN",
+    "usuarioModificacion": "POSTMAN"
+}
+]
