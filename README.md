@@ -1,4 +1,4 @@
-# spring-boot-reactive-tipocambio
+# Instrucciones para dockerizar spring-boot-reactive-tipocambio
 Backend Challengue tipo de cambio Autor Mizraim Cortez Cruz
 
 **Pasos previos a la creación de la imagen y el contenedor**
