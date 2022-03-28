@@ -3,7 +3,12 @@ Backend Challengue tipo de cambio Autor Mizraim Cortez Cruz
 
 **Pasos para la creación de la imagen y el contenedor**
 
-1. Creamos la red usando el comando
-   - docker network create miredbcp
-2. Creamos el contenedor mi-mysql8 apartir de la imagen de mysql, el nombre de nuestro contenedor será mi-mysql8
-   - docker run -p 3306:3306 --name mi-mysql8 --network miredbcp -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=bdtipocambio -d mysql:8
+1. Creamos la red usando el comando.
+   - comando: docker network create miredbcp
+2. Creamos el contenedor mi-mysql8bcp apartir de la imagen de mysql versión 8, el nombre de nuestro contenedor será mi-mysql8bcp.
+   - comando: docker run -p 3306:3306 --name mi-mysql8bcp --network miredbcp -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=bdtipocambio -d mysql:8
+3. Creamos la imagen de nuestro microservicio para ello tenemos que ubicarnos en la raíz de nuestro proyecto spring-boot-reactive-tipocambio, nuestra imagen tendrá el nombre ms-tipocambio:v1 y se creará apartir del jar referenciado en el archivo Dockerfile ubicado en la raíz de nuestro proyecto spring-boot-reactive-tipocambio.
+   - comando: docker image build -t ms-tipocambio:v1 -f Dockerfile .
+4. Creamos el contenedor micro-tipocambio apartir de la imagen ms-tipocambio:v1
+   - docker run -p 6004:6004 --name micro-tipocambio --network mired ms-tipocambio:v1
+   
