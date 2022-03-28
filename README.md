@@ -1,6 +1,18 @@
 # spring-boot-reactive-tipocambio
 Backend Challengue tipo de cambio Autor Mizraim Cortez Cruz
 
+**Pasos previos a la creación de la imagen y el contenedor**
+
+1. En el archivo \spring-boot-reactive-tipocambio\src\main\resources\application.properties en la propiedad spring.r2dbc.url en el nombre del servidor actualizarlo por mi-mysql8bcp quedando de la siguiente manera:
+   - **spring.r2dbc.url=r2dbc:pool:mysql://mi-mysql8bcp:3306/bdtipocambio**
+2. En la raíz del proyecto spring-boot-reactive-tipocambio ejecutar el comando de maven:
+   - comando: **mvn clean package -DskipTests**
+3. Crear el archivo Dockerfile en la raíz del proyecto spring-boot-reactive-tipocambio con el siguiente contenido:
+     FROM openjdk:11
+	 EXPOSE 6004
+	 ADD ./target/spring-boot-reactive-tipocambio*.jar micro-tipocambio.jar
+	 ENTRYPOINT ["java","-jar","/micro-tipocambio.jar"]
+
 **Pasos para la creación de la imagen y el contenedor**
 
 1. Creamos la red usando el comando.
