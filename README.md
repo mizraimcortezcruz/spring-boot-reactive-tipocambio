@@ -12,10 +12,10 @@ Backend Challengue tipo de cambio Autor Mizraim Cortez Cruz
 	 EXPOSE 6004
 	 ADD ./target/spring-boot-reactive-tipocambio*.jar micro-tipocambio.jar
 	 ENTRYPOINT ["java","-jar","/micro-tipocambio.jar"]
-	 <pre><code>chunk1
+<pre><code>chunk1
 	 chunk2
 	 chunk3
-	 </code></pre>
+</code></pre>
 
 **Pasos para la creación de la imagen y el contenedor**
 
