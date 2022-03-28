@@ -15,7 +15,8 @@
 	<name>spring-boot-reactive-tipocambio</name>
 	<description>Reto project for Spring Boot Reactive BCP</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>12</java.version>
+		<io.jsonwebtoken.version>0.11.2</io.jsonwebtoken.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -41,10 +42,7 @@
 			<version>0.8.2.RELEASE</version>
 			<scope>runtime</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.github.jasync-sql/jasync-r2dbc-mysql -->
-		<!-- <dependency> <groupId>com.github.jasync-sql</groupId> <artifactId>jasync-r2dbc-mysql</artifactId> 
-			<version>2.0.6</version> </dependency> -->
-
+		
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -64,6 +62,25 @@
 			<version>1.4.200</version>
 			<scope>test</scope>
 		</dependency>
+		<!--inicio jjwt-->
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-api</artifactId>
+			<version>${io.jsonwebtoken.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-impl</artifactId>
+			<version>${io.jsonwebtoken.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-jackson</artifactId>
+			<version>${io.jsonwebtoken.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<!--fin jjwt-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
