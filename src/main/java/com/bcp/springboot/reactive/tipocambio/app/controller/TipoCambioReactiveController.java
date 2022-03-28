@@ -15,6 +15,8 @@ import com.bcp.springboot.reactive.tipocambio.app.service.TipoCambioReactiveServ
 
 import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Mono;
+import org.springframework.security.access.prepost.PreAuthorize;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/tipocambio")
@@ -29,7 +31,8 @@ public class TipoCambioReactiveController {
 		logger.info("TipoCambioReactiveController guardarTipoCambio");
         return tipoCambioReactiveServiceImpl.customSave(tipoCambio);
     }
-	
+
+	/* @PreAuthorize("hasRole('USER')") */
 	@PostMapping("/actualizar")
     @ResponseStatus(HttpStatus.CREATED)
     public Mono<TipoCambio> actualizarTipoCambio(@RequestBody TipoCambio tipoCambio) {
