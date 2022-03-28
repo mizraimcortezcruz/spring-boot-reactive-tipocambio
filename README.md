@@ -8,13 +8,10 @@ Backend Challengue tipo de cambio Autor Mizraim Cortez Cruz
 2. En la raíz del proyecto spring-boot-reactive-tipocambio ejecutar el comando de maven:
    - comando: **mvn clean package -DskipTests**
 3. Crear el archivo Dockerfile en la raíz del proyecto spring-boot-reactive-tipocambio con el siguiente contenido:
-     FROM openjdk:11
-	 EXPOSE 6004
-	 ADD ./target/spring-boot-reactive-tipocambio*.jar micro-tipocambio.jar
-	 ENTRYPOINT ["java","-jar","/micro-tipocambio.jar"]
 	 <pre><code>FROM openjdk:11
    EXPOSE 6004
-   ADD ./target/spring-boot-reactive-tipocambio*.jar micro-tipocambio.jar</code></pre>
+   ADD ./target/spring-boot-reactive-tipocambio*.jar micro-tipocambio.jar
+   ENTRYPOINT ["java","-jar","/micro-tipocambio.jar"]</code></pre>
 
 **Pasos para la creación de la imagen y el contenedor**
 
