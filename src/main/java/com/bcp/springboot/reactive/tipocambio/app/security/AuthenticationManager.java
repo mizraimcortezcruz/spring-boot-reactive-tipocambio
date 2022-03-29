@@ -11,7 +11,10 @@ import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 import java.util.List;
 import java.util.stream.Collectors;
-
+/*
+ * JwtAuthenticationManager
+ * validamos el token y el rol.
+ * */
 @Component
 @AllArgsConstructor
 public class AuthenticationManager implements ReactiveAuthenticationManager {

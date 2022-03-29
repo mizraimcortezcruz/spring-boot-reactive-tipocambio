@@ -12,12 +12,18 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-
+/*
+ * JwtSigner
+ * Clase para la generación del token
+ * */
 @Component
 public class JWTUtil {
-
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+	
     @Value("${springbootwebfluxjjwt.jjwt.secret}")
     private String secret;
 
@@ -28,7 +34,9 @@ public class JWTUtil {
 
     @PostConstruct
     public void init() {
+    	logger.info("JWTUtil init");
         this.key = Keys.hmacShaKeyFor(secret.getBytes());
+        logger.info("JWTUtil this.key:"+this.key);
     }
 
     public Claims getAllClaimsFromToken(String token) {
@@ -49,13 +57,19 @@ public class JWTUtil {
     }
 
     public String generateToken(User user) {
+    	logger.info("JWTUtil generateToken user:"+user.toString());
         Map<String, Object> claims = new HashMap<>();
         claims.put("role", user.getRoles());
-        return doGenerateToken(claims, user.getUsername());
+        String tokenGenerado=doGenerateToken(claims, user.getUsername());
+        logger.info("JWTUtil generateToken tokenGenerado:"+tokenGenerado);
+        return tokenGenerado;
     }
 
     private String doGenerateToken(Map<String, Object> claims, String username) {
         Long expirationTimeLong = Long.parseLong(expirationTime); //in second
+        logger.info("JWTUtil doGenerateToken");
+        logger.info("JWTUtil doGenerateToken expirationTime:"+expirationTime);
+        logger.info("JWTUtil doGenerateToken expirationTimeLong"+String.valueOf(expirationTimeLong));
         final Date createdDate = new Date();
         final Date expirationDate = new Date(createdDate.getTime() + expirationTimeLong * 1000);
 

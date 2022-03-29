@@ -72,7 +72,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\":8,\r\n    \"montoOrigen\": 1,\r\n    \"monedaOrigen\": \"SOLES\",\r\n    \"montoDestino\": 0.24,\r\n    \"monedaDestino\": \"EUROS\",\r\n    \"usuarioCreacion\": \"POSTMANmizraim\",\r\n    \"usuarioModificacion\": \"POSTMANmizraim\"\r\n}",
+							"raw": "{\r\n    \"id\":1,\r\n    \"montoOrigen\": 1.0,\r\n    \"monedaOrigen\": \"DOLARES\",\r\n    \"montoDestino\": 0.91,\r\n    \"monedaDestino\": \"EUROS\",\r\n    \"usuarioCreacion\": \"POSTMAN1\",\r\n    \"usuarioModificacion\": \"POSTMAN1\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -139,6 +139,41 @@
 				}
 			],
 			"description": "TipoCambio"
+		},
+		{
+			"name": "jwt",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6004/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6004",
+							"path": [
+								"login"
+							]
+						},
+						"description": "login"
+					},
+					"response": []
+				}
+			],
+			"description": "jwt"
 		}
 	]
 }

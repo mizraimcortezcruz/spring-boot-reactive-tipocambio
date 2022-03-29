@@ -11,6 +11,8 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 import lombok.AllArgsConstructor;
 import reactor.core.publisher.Mono;
 
+/*similar al spring SpringSecurityConfig
+ * */
 @AllArgsConstructor
 @EnableWebFluxSecurity
 @EnableReactiveMethodSecurity

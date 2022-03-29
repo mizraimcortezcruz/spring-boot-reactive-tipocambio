@@ -7,15 +7,19 @@ import java.util.Map;
 
 import javax.annotation.PostConstruct;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 @Service
 public class UserService {
 	
 	private Map<String, User> data;
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @PostConstruct
     public void init() {
+    	logger.info("UserService init");
         data = new HashMap<>();
 
         //username:passwowrd -> user:user
@@ -30,6 +34,8 @@ public class UserService {
     }
 
     public Mono<User> findByUsername(String username) {
+    	logger.info("UserService findByUsername username:"+username);
+    	logger.info("UserService findByUsername password:"+data.get(username).getPassword());
         return Mono.justOrEmpty(data.get(username));
     }
 

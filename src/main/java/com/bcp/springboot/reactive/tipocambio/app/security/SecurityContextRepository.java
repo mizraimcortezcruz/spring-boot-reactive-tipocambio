@@ -9,7 +9,11 @@ import org.springframework.security.web.server.context.ServerSecurityContextRepo
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
-
+/*
+ * En esto componente puede configurar todas sus necesidades de seguridad, 
+ * como el administrador de autenticación, el repositorio de contexto de seguridad, 
+ * qué URL está permitida
+ * */
 @Component
 public class SecurityContextRepository implements ServerSecurityContextRepository {
 
