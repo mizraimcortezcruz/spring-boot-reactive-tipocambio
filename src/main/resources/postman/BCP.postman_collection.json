@@ -127,8 +127,9 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjpbIlJPTEVfVVNFUiJdLCJzdWIiOiJ1c2VyIiwiaWF0IjoxNjQ4NTIxNjM4LCJleHAiOjE2NDg1NTA0Mzh9.Rvcrx01mE1pBxJzgG9UrkYohYSZ6JqyMtRHAyos1YSmYh7Yx18i-mLcmonN7SVOOnsV84JYwAIuKhXOpGP6w3g",
-								"type": "text"
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjpbIlJPTEVfVVNFUiJdLCJzdWIiOiJ1c2VyIiwiaWF0IjoxNjQ4NTUxODE4LCJleHAiOjE2NDg1ODA2MTh9.8DNXArvCM6IXXcUZP3xhFzVs_wL_hH2hJBqzYB5DUrG0suiVaV1jtpjAg6DZ2793A0w4maClcwQAlrq-UbTAzQ",
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"url": {
@@ -159,7 +160,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:6004/tipocambio/1",
+							"raw": "http://localhost:6004/tipocambio/getById/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -167,6 +168,7 @@
 							"port": "6004",
 							"path": [
 								"tipocambio",
+								"getById",
 								"1"
 							]
 						},

@@ -21,7 +21,7 @@ public class TipoCambioHandler {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@SuppressWarnings("deprecation")
-	@PreAuthorize("hasRole('USER')")
+	//@PreAuthorize("hasRole('USER')")
 	public Mono<ServerResponse> listar(ServerRequest request){
 		logger.info("TipoCambioHandler listar");
 		return ServerResponse.ok()
@@ -29,7 +29,7 @@ public class TipoCambioHandler {
 				.body(tipoCambioReactiveServiceImpl.findAll(), TipoCambio.class);
 	}
 	@SuppressWarnings("deprecation")
-	@PreAuthorize("hasRole('USER')")
+	//@PreAuthorize("hasRole('USER')")
 	public Mono<ServerResponse> ver(ServerRequest request){
 		logger.info("TipoCambioHandler ver");
 		String id = request.pathVariable("id");
