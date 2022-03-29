@@ -13,7 +13,13 @@
 					"name": "getTipoCambioValue",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjpbIlJPTEVfVVNFUiJdLCJzdWIiOiJ1c2VyIiwiaWF0IjoxNjQ4NTIxNjM4LCJleHAiOjE2NDg1NTA0Mzh9.Rvcrx01mE1pBxJzgG9UrkYohYSZ6JqyMtRHAyos1YSmYh7Yx18i-mLcmonN7SVOOnsV84JYwAIuKhXOpGP6w3g",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:6004/tipocambio/getexchangevalue/40/from/SOLES/to/DOLARES",
 							"protocol": "http",
@@ -39,7 +45,13 @@
 					"name": "guardarTipoCambio",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjpbIlJPTEVfQURNSU4iXSwic3ViIjoiYWRtaW4iLCJpYXQiOjE2NDg1MjExOTYsImV4cCI6MTY0ODU0OTk5Nn0.CnTCPTH43X2YxwqzLP9afFwsGClsyYbg5SqHS281wVCOM_7TFi4OfznYumuJyjQwYOZvBZCHu1zxsQ6QxSMpGw",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n    \"montoOrigen\": 1,\r\n    \"monedaOrigen\": \"SOLES\",\r\n    \"montoDestino\": 0.24,\r\n    \"monedaDestino\": \"EUROS\",\r\n    \"usuarioCreacion\": \"POSTMAN\",\r\n    \"usuarioModificacion\": \"POSTMAN\"\r\n}",
@@ -59,6 +71,13 @@
 							"path": [
 								"tipocambio",
 								"guardar"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
 							]
 						},
 						"description": "guardarTipoCambio"
@@ -69,7 +88,13 @@
 					"name": "editarTipoCambio",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjpbIlJPTEVfQURNSU4iXSwic3ViIjoiYWRtaW4iLCJpYXQiOjE2NDg1MjExOTYsImV4cCI6MTY0ODU0OTk5Nn0.CnTCPTH43X2YxwqzLP9afFwsGClsyYbg5SqHS281wVCOM_7TFi4OfznYumuJyjQwYOZvBZCHu1zxsQ6QxSMpGw",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n    \"id\":1,\r\n    \"montoOrigen\": 1.0,\r\n    \"monedaOrigen\": \"DOLARES\",\r\n    \"montoDestino\": 0.91,\r\n    \"monedaDestino\": \"EUROS\",\r\n    \"usuarioCreacion\": \"POSTMAN1\",\r\n    \"usuarioModificacion\": \"POSTMAN1\"\r\n}",
@@ -99,7 +124,13 @@
 					"name": "getAll",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjpbIlJPTEVfVVNFUiJdLCJzdWIiOiJ1c2VyIiwiaWF0IjoxNjQ4NTIxNjM4LCJleHAiOjE2NDg1NTA0Mzh9.Rvcrx01mE1pBxJzgG9UrkYohYSZ6JqyMtRHAyos1YSmYh7Yx18i-mLcmonN7SVOOnsV84JYwAIuKhXOpGP6w3g",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:6004/tipocambio/getAll",
 							"protocol": "http",
@@ -120,7 +151,13 @@
 					"name": "getById",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjpbIlJPTEVfVVNFUiJdLCJzdWIiOiJ1c2VyIiwiaWF0IjoxNjQ4NTIxNjM4LCJleHAiOjE2NDg1NTA0Mzh9.Rvcrx01mE1pBxJzgG9UrkYohYSZ6JqyMtRHAyos1YSmYh7Yx18i-mLcmonN7SVOOnsV84JYwAIuKhXOpGP6w3g",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:6004/tipocambio/1",
 							"protocol": "http",
@@ -150,7 +187,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
+							"raw": "{\r\n    \"username\": \"user\",\r\n    \"password\": \"user\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

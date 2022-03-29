@@ -25,14 +25,15 @@ public class TipoCambioReactiveController {
 	private TipoCambioReactiveServiceImpl tipoCambioReactiveServiceImpl;
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
+	@PreAuthorize("hasRole('USER')")
 	@PostMapping("/guardar")
     @ResponseStatus(HttpStatus.CREATED)
     public Mono<TipoCambio> guardarTipoCambio(@RequestBody TipoCambio tipoCambio) {
 		logger.info("TipoCambioReactiveController guardarTipoCambio");
         return tipoCambioReactiveServiceImpl.customSave(tipoCambio);
     }
-
-	/* @PreAuthorize("hasRole('USER')") */
+	
+	@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("/actualizar")
     @ResponseStatus(HttpStatus.CREATED)
     public Mono<TipoCambio> actualizarTipoCambio(@RequestBody TipoCambio tipoCambio) {

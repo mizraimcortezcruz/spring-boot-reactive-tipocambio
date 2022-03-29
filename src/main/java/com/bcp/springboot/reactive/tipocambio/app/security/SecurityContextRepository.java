@@ -1,5 +1,8 @@
 package com.bcp.springboot.reactive.tipocambio.app.security;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -9,17 +12,17 @@ import org.springframework.security.web.server.context.ServerSecurityContextRepo
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
-/*
- * En esto componente puede configurar todas sus necesidades de seguridad, 
- * como el administrador de autenticación, el repositorio de contexto de seguridad, 
- * qué URL está permitida
- * */
+
 @Component
 public class SecurityContextRepository implements ServerSecurityContextRepository {
 
+	@Autowired
     private AuthenticationManager authenticationManager;
+	
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     public SecurityContextRepository(AuthenticationManager authenticationManager) {
+    	logger.info("SecurityContextRepository SecurityContextRepository");
         this.authenticationManager = authenticationManager;
     }
 
@@ -30,6 +33,7 @@ public class SecurityContextRepository implements ServerSecurityContextRepositor
 
     @Override
     public Mono<SecurityContext> load(ServerWebExchange swe) {
+    	logger.info("(1) SecurityContextRepository load");
         return Mono.justOrEmpty(swe.getRequest().getHeaders().getFirst(HttpHeaders.AUTHORIZATION))
             .filter(authHeader -> authHeader.startsWith("Bearer "))
             .flatMap(authHeader -> {

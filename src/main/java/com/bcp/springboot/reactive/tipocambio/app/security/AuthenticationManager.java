@@ -3,6 +3,9 @@ package com.bcp.springboot.reactive.tipocambio.app.security;
 import io.jsonwebtoken.Claims;
 import lombok.AllArgsConstructor;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.ReactiveAuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -18,12 +21,15 @@ import java.util.stream.Collectors;
 @Component
 @AllArgsConstructor
 public class AuthenticationManager implements ReactiveAuthenticationManager {
-
+	
+	@Autowired
     private JWTUtil jwtUtil;
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
     @SuppressWarnings("unchecked")
     public Mono<Authentication> authenticate(Authentication authentication) {
+    	logger.info("AuthenticationManager authenticate");
         String authToken = authentication.getCredentials().toString();
         String username = jwtUtil.getUsernameFromToken(authToken);
         return Mono.just(jwtUtil.validateToken(authToken))

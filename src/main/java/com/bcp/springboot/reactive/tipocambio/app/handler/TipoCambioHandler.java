@@ -1,6 +1,7 @@
 package com.bcp.springboot.reactive.tipocambio.app.handler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 import com.bcp.springboot.reactive.tipocambio.app.service.TipoCambioReactiveServiceImpl;
@@ -20,6 +21,7 @@ public class TipoCambioHandler {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@SuppressWarnings("deprecation")
+	@PreAuthorize("hasRole('USER')")
 	public Mono<ServerResponse> listar(ServerRequest request){
 		logger.info("TipoCambioHandler listar");
 		return ServerResponse.ok()
@@ -27,6 +29,7 @@ public class TipoCambioHandler {
 				.body(tipoCambioReactiveServiceImpl.findAll(), TipoCambio.class);
 	}
 	@SuppressWarnings("deprecation")
+	@PreAuthorize("hasRole('USER')")
 	public Mono<ServerResponse> ver(ServerRequest request){
 		logger.info("TipoCambioHandler ver");
 		String id = request.pathVariable("id");
@@ -38,6 +41,7 @@ public class TipoCambioHandler {
 				.switchIfEmpty(ServerResponse.notFound().build());
 	}
 	@SuppressWarnings("deprecation")
+	@PreAuthorize("hasRole('USER')")
 	public Mono<ServerResponse> retrieveExchangeValue(ServerRequest request){
 		logger.info("TipoCambioHandler retrieveExchangeValue");
 		String montoDestino = request.pathVariable("montoDestino");
